@@ -1,10 +1,10 @@
-table {
+table{
+	margin: 20px;
 	border-collapse: collapse;
-	margin: 20px 20px 20px 100px;
 }
 
-table td, table th {
-	border: 1px solid #ddd;
+table td{
+	border:1px solid black;
 	padding: 8px;
 }
 

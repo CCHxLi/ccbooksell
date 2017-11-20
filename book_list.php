@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>book list</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="./css_folder/book_list.css">
+		<link rel="stylesheet" type="text/css" href="./css_folder/shared.css">
 		<script src="checkdata.js"></script>
+		<title>book list</title>
 	</head>
 	<body>
 		<!-- search bar -->
@@ -62,7 +65,7 @@
     								ON tblcategory.category_ID = tblbook.book_Category_ID
 								JOIN tblseller 
     								ON tblbook.seller_ID = tblseller.seller_ID
-								WHERE category_Name = '".$category_name."'";
+								WHERE category_Name = '".$category_name."';";
 					}
 					else{
 						$sql = "SELECT book_ID, book_Name, category_Name, book_ISBN, book_Price, date_Post, seller_Name FROM tblcategory
@@ -70,7 +73,7 @@
     								ON tblcategory.category_ID = tblbook.book_Category_ID
 								JOIN tblseller 
     								ON tblbook.seller_ID = tblseller.seller_ID
-								WHERE book_Name LIKE '%".$book_name."%'";
+								WHERE book_Name LIKE '%".$book_name."%';";
 					}
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) 
@@ -85,7 +88,7 @@
 								echo 
 								"<tr>".
 									"<td>". 
-									"<a href='book_detail.php?book_name=".$row["book_Name"]."'>".$row["book_Name"]. "</a>".
+									"<a href='book_detail.php?book_id=".$row["book_ID"]."&book_name=".$row["book_Name"]."'>".$row["book_Name"]. "</a>".
 									"</td>".
 									"<td>". $row["category_Name"]. "</td>".
 									"<td>". $row["book_Price"]. "</td>".
@@ -106,7 +109,7 @@
 		<!-- line to divide the footer  -->
 		<hr>
 		<footer>
-			<a href="index.html">home</a>
+			<a href="index.html">Home</a>
 		</footer>
 	</body>
 </html>

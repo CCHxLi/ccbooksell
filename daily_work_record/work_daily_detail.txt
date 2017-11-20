@@ -36,3 +36,10 @@ NOV.17 2017
 		add book_detail.php page;
 		Brad properly gonna help us to do the css file;
 	Q:how to make the shared page for each page(search button and footer)
+
+NOV.20 2017
+	HX: fix sign in process php
+		add success php
+		add error php
+		
+	HX: find a problem when trying to login to seller page after sign in
